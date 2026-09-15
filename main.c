@@ -51,7 +51,7 @@ int main()
         printf("%d\n", mult(x, y));
         break;
     case 4:
-        printf("%d\n", mult(x, y));
+        printf("%d\n", div(x, y));
         break;
     default:
         printf("No valid operation. Try another one.\n");
