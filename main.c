@@ -1,57 +1,60 @@
 #include <stdio.h>
 
-int add(int x, int y)
+char operator;
+int number_one, number_two;
+
+int addition(int x, int y)
 {
     return x + y;
 }
 
-int sub(int x, int y)
+int subtract(int x, int y)
 {
     return x - y;
 }
 
-int mult(int x, int y)
+int multiply(int x, int y)
 {
     return x * y;
 }
 
-int div(int x, int y)
+int divide(int x, int y)
 {
-    return x / y;
+    if (y != 0)
+    {
+        return x / y;
+    }
+    else
+    {
+        printf("Dividing by Zero is invalid.\n");
+        return -1;
+    }
 }
 
 int main()
 {
-    int op;
-    int x, y;
-
-    printf("Choose an operator:\n \
-           1 - Add\n \
-           2 - Subtract\n \
-           3 - Multiply\n \
-           4 - Divide\n \
-           Your choice: ");
-    scanf("%d", &op);
+    printf("Choose an operator:\n+ (Add)\n- (Subtract)\n* (Multiply)\n/ (Divide)\nYour choice: ");
+    scanf("%c", &operator);
 
     printf("Type your first number: ");
-    scanf("%d", &x);
+    scanf("%d", &number_one);
 
     printf("Type your second number: ");
-    scanf("%d", &y);
+    scanf("%d", &number_two);
 
-    switch (op)
+    switch (operator)
     {
-    case 1:
-        printf("%d\n", add(x, y));
+    case '+':
+        printf("%d\n", addition(number_one, number_two));
         break;
-    case 2:
-        printf("%d\n ", sub(x, y));
+    case '-':
+        printf("%d\n ", subtract(number_one, number_two));
         break;
-    case 3:
-        printf("%d\n", mult(x, y));
+    case '*':
+        printf("%d\n", multiply(number_one, number_two));
         break;
-    case 4:
-        printf("%d\n", div(x, y));
+    case '/':
+        printf("%d\n", divide(number_one, number_two));
         break;
     default:
         printf("No valid operation. Try another one.\n");
