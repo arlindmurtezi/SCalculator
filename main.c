@@ -3,26 +3,27 @@
 char operator;
 int number_one, number_two;
 
-int addition(int x, int y)
+void addition(int x, int y)
 {
-    return x + y;
+    printf("%d\n", x + y);
 }
 
-int subtract(int x, int y)
+void subtract(int x, int y)
 {
-    return x - y;
+    printf("%d\n", x - y);
 }
 
-int multiply(int x, int y)
+void multiply(int x, int y)
 {
-    return x * y;
+    printf("%d\n", x * y);
 }
 
 int divide(int x, int y)
 {
     if (y != 0)
     {
-        return x / y;
+        printf("%d\n", x / y);
+        return 0;
     }
     else
     {
@@ -45,16 +46,16 @@ int main()
     switch (operator)
     {
     case '+':
-        printf("%d\n", addition(number_one, number_two));
+        addition(number_one, number_two);
         break;
     case '-':
-        printf("%d\n ", subtract(number_one, number_two));
+        subtract(number_one, number_two);
         break;
     case '*':
-        printf("%d\n", multiply(number_one, number_two));
+        multiply(number_one, number_two);
         break;
     case '/':
-        printf("%d\n", divide(number_one, number_two));
+        divide(number_one, number_two);
         break;
     default:
         printf("No valid operation. Try another one.\n");
